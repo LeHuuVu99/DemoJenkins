@@ -1,13 +1,13 @@
 pipeline {
     agent any
-    tools {
-        maven "3.8.5"
-    }
+    // tools {
+    //     maven "3.8.5"
+    // }
     stages {
         stage('Pull code') {
             steps {
                 // Pull code from source control repository
-                git branch: 'main', url: 'https://github.com/LeHuuVu99/university_management.git'
+                git branch: 'master', url: 'https://github.com/LeHuuVu99/university_management.git'
             }
         }
         stage('Compile and Clean') {
@@ -24,7 +24,7 @@ pipeline {
         stage('Push code') {
             steps {
                 // Push code to source control repository
-                gitPush(branch: 'main')
+                gitPush(branch: 'master')
             }
         }
         stage('Archiving') {
