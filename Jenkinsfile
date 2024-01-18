@@ -16,17 +16,17 @@ pipeline {
                 sh "mvn clean compile"
             }
         }
-        // stage('deploy') {
-        //     steps {
-        //         sh "mvn package"
-        //     }
-        // }
-        stage('Push code') {
+        stage('deploy') {
             steps {
-                // Push code to source control repository
-                gitPush(branch: 'master')
+                sh "mvn package"
             }
         }
+        // stage('Push code') {
+        //     steps {
+        //         // Push code to source control repository
+        //         gitPush(branch: 'master')
+        //     }
+        // }
         stage('Archiving') {
             steps {
                 archiveArtifacts '**/target/*.jar'
