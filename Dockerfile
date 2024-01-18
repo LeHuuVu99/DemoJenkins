@@ -13,7 +13,6 @@ WORKDIR $HOME
 ADD . $HOME
 RUN ./mvnw -f $HOME/pom.xml clean package
 
-# Giai đoạn đóng gói
 FROM openjdk:17 
 COPY --from=build /usr/app/target/*.jar /app/*.jar
 EXPOSE 8080
