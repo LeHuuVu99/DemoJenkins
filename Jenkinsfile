@@ -1,8 +1,8 @@
 pipeline {
     agent any
-    // tools {
-    //     maven "3.8.5"
-    // }
+    tools {
+        maven "maven"
+    }
     stages {
         stage('Pull code') {
             steps {
