@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>fpt.com</groupId>
-	<artifactId>universitymanagement</artifactId>
+	<artifactId>DemoJenkins</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>University Management</name>
 	<description>university_management</description>
