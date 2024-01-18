@@ -11,8 +11,8 @@
 	<groupId>fpt.com</groupId>
 	<artifactId>DemoJenkins</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>University Management</name>
-	<description>university_management</description>
+	<name>DemoJenkins</name>
+	<description>DemoJenkins</description>
 	<properties>
 		<java.version>17</java.version>
 		<openapi>2.1.0</openapi>
