@@ -1,24 +1,24 @@
-# FROM openjdk:17
+FROM openjdk:17
 
-# ADD target/universitymanagement-0.0.1-SNAPSHOT.jar universitymanagement-0.0.1-SNAPSHOT.jar
-# EXPOSE 8080
+ADD target/JenkinsDemo-0.0.1-SNAPSHOT.jar JenkinsDemo-0.0.1-SNAPSHOT.jar
 
-# ENTRYPOINT ["java","-jar","universitymanagement-0.0.1-SNAPSHOT.jar"]
+EXPOSE 8080
 
+ENTRYPOINT ["java","-jar","JenkinsDemo-0.0.1-SNAPSHOT.jar"]
 # Build stage
 
-FROM openjdk:17 AS build
-ENV HOME=/usr/app
-RUN mkdir -p $HOME
-WORKDIR $HOME
-ADD . $HOME
-RUN ./mvnw -f $HOME/pom.xml clean package
+# FROM openjdk:17 AS build
+# ENV HOME=/usr/app
+# RUN mkdir -p $HOME
+# WORKDIR $HOME
+# ADD . $HOME
+# RUN ./mvnw -f $HOME/pom.xml clean package
 
-# Package stage
-FROM openjdk:17 
-COPY --from=build /usr/app/target/*.jar /app/*.jar
-EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/app/*.jar"]
+# # Package stage
+# FROM openjdk:17 
+# COPY --from=build /usr/app/target/*.jar /app/*.jar
+# EXPOSE 8080
+# ENTRYPOINT ["java", "-jar", "/app/*.jar"]
 
 # Build stage
 
