@@ -16,11 +16,11 @@ pipeline {
                 sh "mvn clean compile"
             }
         }
-        stage('deploy') {
-            steps {
-                sh "mvn package"
-            }
-        }
+        // stage('deploy') {
+        //     steps {
+        //         sh "mvn package"
+        //     }
+        // }
         stage('Push code') {
             steps {
                 // Push code to source control repository
